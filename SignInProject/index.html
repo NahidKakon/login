@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Sign In/Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="form-container">
+            <form id="signInForm">
+                <h2>Sign In</h2>
+                <label for="signInEmail">Email:</label>
+                <input type="email" id="signInEmail" required>
+                <label for="signInPassword">Password:</label>
+                <input type="password" id="signInPassword" required>
+                <button type="submit">Sign In</button>
+                <p id="signInMessage"></p>
+                <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+            </form>
+
+            <form id="signUpForm" style="display:none;">
+                <h2>Sign Up</h2>
+                <label for="signUpEmail">Email:</label>
+                <input type="email" id="signUpEmail" required>
+                <label for="signUpPassword">Password:</label>
+                <input type="password" id="signUpPassword" required>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" required>
+                <button type="submit">Sign Up</button>
+                <p id="signUpMessage"></p>
+            </form>
+
+            <form id="forgotPasswordForm" style="display:none;">
+                <h2>Forgot Password</h2>
+                <label for="forgotEmail">Enter your email:</label>
+                <input type="email" id="forgotEmail" required>
+                <button type="submit">Retrieve Password</button>
+                <p id="forgotMessage"></p>
+            </form>
+
+            <button id="toggleForm">Don't have an account? Sign Up</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!--Explanation:
+Forgot Password Form:
+
+Added a new form for the "Forgot Password" functionality. This form asks the user to enter their email address.
+If the email exists (dummy check here), a message is displayed saying that password reset instructions have been sent.
+Toggle Button Logic:
+
+Modified the toggle button logic to switch between the sign-in, sign-up, and forgot password forms.
+Forgot Password Link:
+
+Added a link in the sign-in form that allows users to switch to the forgot password form.
+Basic Client-Side Checks:
+
+For sign-in, sign-up, and forgot password processes, added dummy checks to simulate backend logic. For example, checking if an email exists in the database and if passwords match.
+Security Considerations:
+Client-side Security: The example shows basic client-side security like input validation. However, remember that true security checks must be performed on the server side.
+Password Storage: Passwords should never be stored in plain text; use a secure hashing algorithm (like bcrypt) on the server side.
+Email Verification: In a real application, a backend service would send a password reset email with a secure, time-limited token.
+
+
+
+
+
+-->
